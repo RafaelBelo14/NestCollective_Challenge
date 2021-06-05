@@ -47,7 +47,7 @@
 								<tr class="row100 head">
 									<th class="cell100 column1" style="background-color: #2c6ed5">Name</th>
 									<th class="cell100 column2" style="background-color: #2c6ed5">Address</th>
-									<th class="cell100 column3" style="background-color: #2c6ed5">Ranking</th>
+									<th class="cell100 column3" style="background-color: #2c6ed5">Rating</th>
 									<th class="cell100 column4" style="background-color: #2c6ed5">Actions</th>
 								</tr>
 							</thead>
@@ -64,7 +64,7 @@
 										<td class="cell100 column3">{{tasca.rating}}</td>
 										<td class="cell100 column4">
 											<button class="btn2 btn--radius-2 btn--green" onclick="location.href='{% url 'detalhes' tasca.id %}'"> Details </button>
-											<button class="btn2 btn--radius-2 btn--blue" onclick="location.href='{% url 'index' %}'"> Edit </button>
+											<button class="btn2 btn--radius-2 btn--blue" onclick="location.href='{% url 'edit' tasca.id %}'"> Edit </button>
 											<button class="btn2 btn--radius-2 btn--red" onclick="location.href='{% url 'delete' tasca.id %}'"> Delete </button>
 										</td>
 									</tr>

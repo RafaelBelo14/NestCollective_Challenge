@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Icons font CSS-->
+    <link href={% static "css/material-design-iconic-font.min.css" %} rel="stylesheet" media="all">
+    <link href={% static "css/font-awesome.min.css" rel="stylesheet" %} media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href={% static "css/select2.min.css" %} rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href={% static "css/main2.css" %} rel="stylesheet" media="all">
+
+    <title>Detalhes</title>
+</head>
+<body>
+
+    <s:if test="hasActionErrors()">
+        <s:actionerror/>
+    </s:if>
+    <s:if test="hasActionMessages()">
+        <s:actionmessage/>
+    </s:if>
+
+    <div class="page-wrapper p-t-130 font-poppins" style="background: white;">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Detalhes de {{object.name}}</h2>
+                        <label class="label"><b>Address:</b> {{object.address}}</label>
+                        <label class="label"><b>Rating:</b> {{object.rating}}</label>
+                        <label class="label"><b>Mapa:</b></label>
+                    <br>
+                    </s:form>
+                    <div class="p-t-10">
+                        <button class="btn btn--radius-2 btn--blue" onclick="location.href='{% url 'index' %}'"> Back </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
