@@ -6,3 +6,4 @@ class Tasca(models.Model):
       name = models.CharField(max_length=100)
       address = models.CharField(max_length=200)
       rating = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)])
+      tascaPicture = models.ImageField(null=True, blank=True, upload_to='media')

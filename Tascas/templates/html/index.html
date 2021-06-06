@@ -36,9 +36,15 @@
     	<link href={% static "css/main2.css" %} rel="stylesheet" media="all">
 
 </head>
-<body>
+<body style="background: #86aaf7;">
 	<div class="limiter">
-		<div class="container-table100">
+		<form action="{% url 'index' %}" method='POST' class="search-forms">
+			{% csrf_token %}
+			<input class="form-search-tapas" name="searched" type="text" placeholder="Search your Tasca here..." style="color: white;"/>
+			<button class="btn btn--radius-2 btn--blue" type="submit">Search</button>
+		</form>
+		<div class="container-table100" style="background: #86aaf7;" >
+		
 			<div class="wrap-table100">
 				<div class="table100 ver1 m-b-110">
 					<div class="table100-head">
@@ -73,6 +79,7 @@
 						</table>
 					</div>
 				</div>
+				<div class="endButtons">
 					<button class="btn btn--radius-2 btn--blue" onclick="location.href='{% url 'index' %}'"> Refresh </button>
 					<button class="btn btn--radius-2 btn--blue" onclick="location.href='{% url 'create' %}'"> Create </button>
 				</div>

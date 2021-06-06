@@ -30,12 +30,12 @@
         <s:actionmessage/>
     </s:if>
 
-    <div class="page-wrapper p-t-130 p-b-100 font-poppins" style="background: white;">
+    <div class="page-wrapper p-t-100 p-b-100 font-poppins" style="background: #4272d7;">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Create</h2>
-                        <form action="/registTasca/" method="POST">
+                        <form action="/registTasca/" method="POST" enctype="multipart/form-data">
                             {% csrf_token %} 
                             <div class="row row-space">
                                 <div class="col-2">
@@ -60,6 +60,14 @@
                                     <div class="input-group">
                                         <label class="label">Rating (1-10)</label>
                                         <input class="input--style-4" type="number" name="rating" min="1" max="10" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Image</label>
+                                        <input type="file" name="imageTasca" id="fileToUpload" required>
                                     </div>
                                 </div>
                             </div>
