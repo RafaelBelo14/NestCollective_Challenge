@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.core.exceptions import ValidationError
 from django.db.models import Q
 from .models import Tasca
+import folium
+import geocoder 
 
 # Create your views here.
 def index(request):
@@ -33,8 +35,20 @@ def index(request):
 
 def detalhes(request, tasca_id):
       tasca = Tasca.objects.get(pk=tasca_id)
+      localtion = geocoder.osm(tasca.address)
+      lat = localtion.lat
+      lng = localtion.lng
+
+      # Se o endereço não existir, mostra uma mensagem de erro
+      if lat == None or lng == None:
+            m = 'This address is invalid.'
+      else:
+            m = folium.Map([lat, lng], zoom_start=10)
+            folium.Marker([lat, lng], tooltip="Click for more", popup=tasca.address).add_to(m)
+            m = m._repr_html_()
       context = {
-            'object': tasca
+            'object': tasca,
+            'm': m
       }
       return render(request, "../templates/html/details.html", context)
 

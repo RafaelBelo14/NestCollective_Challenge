@@ -40,7 +40,7 @@
 	<div class="limiter">
 		<form action="{% url 'index' %}" method='POST' class="search-forms">
 			{% csrf_token %}
-			<input class="form-search-tapas" name="searched" type="text" placeholder="Search your Tasca here..." style="color: white;"/>
+			<input class="form-search-tapas" name="searched" type="text" placeholder="Search your Tasca here..."/>
 			<button class="btn btn--radius-2 btn--blue" type="submit">Search</button>
 		</form>
 		<div class="container-table100" style="background: #86aaf7;" >

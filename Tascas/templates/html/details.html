@@ -53,30 +53,41 @@
                             </div>
                         </div>
                     </div>
-                    {% if object.rating <= 3 %}
-                        <br><br>
-                        <label class="label"><b>Expert comment:&emsp;</b>Better fish in the sea...</label>
-                    {% endif %}
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                {% if object.rating <= 3 %}
+                                    <br><br>
+                                    <label class="label"><b>Comment:&emsp;</b>Better fish in the sea...</label>
+                                {% endif %}
 
-                    {% if object.rating > 3 and object.rating <= 5 %}
-                        <br><br>
-                        <label class="label"><b>Expert comment:&emsp;</b>Nah, could be better...</label>
-                    {% endif %}
+                                {% if object.rating > 3 and object.rating <= 5 %}
+                                    <br><br>
+                                    <label class="label"><b>Comment:&emsp;</b>Nah, could be better...</label>
+                                {% endif %}
 
-                    {% if object.rating > 5 and object.rating <= 7 %}
-                        <br><br>
-                        <label class="label"><b>Expert comment:&emsp;</b>Nice Tasca, but it needs more...</label>
-                    {% endif %}
+                                {% if object.rating > 5 and object.rating <= 7 %}
+                                    <br><br>
+                                    <label class="label"><b>Comment:&emsp;</b>Nice Tasca, but it needs more...</label>
+                                {% endif %}
 
-                    {% if object.rating > 7 and object.rating <= 9 %}
-                        <br><br>
-                        <label class="label"><b>Expert comment:&emsp;</b>Now we are talking about good Tascas!</label>
-                    {% endif %}
+                                {% if object.rating > 7 and object.rating <= 9 %}
+                                    <br><br>
+                                    <label class="label"><b>Comment:&emsp;</b>Now we are talking about good Tascas!</label>
+                                {% endif %}
 
-                    {% if object.rating == 10 %}
-                        <br><br>
-                        <label class="label"><b>Expert comment:&emsp;</b>One word...Faaaantastic! </label>
-                    {% endif %}
+                                {% if object.rating == 10 %}
+                                    <br><br>
+                                    <label class="label"><b>Comment:&emsp;</b>One word...Faaaantastic! </label>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                {{m|safe}}
+                            </div>
+                        </div>
+                    </div>
                     <br>
                     </s:form>
                     <div class="p-t-10">
