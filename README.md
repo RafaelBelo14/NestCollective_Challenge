@@ -7,6 +7,7 @@ Steps for running the program:
 ---
 ## Libraries to compile
 
+- python3 -m pip install Pillow
 - python3 -m pip install Django
 - python3 -m pip install folium
 - python3 -m pip install geocoder
